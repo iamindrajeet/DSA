@@ -1,4 +1,4 @@
-package threeInOne;
+package questions;
 
 import java.util.Stack;
 

@@ -77,7 +77,7 @@ public class CircularQueueArray {
 		}
 	}
 
-	// delete Queue
+	// delete circular Queue
 	public void deleteQueue() {
 		arr = null;
 		System.out.println("Queue is successfully deleted!!");
