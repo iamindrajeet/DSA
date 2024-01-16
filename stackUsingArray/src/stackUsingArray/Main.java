@@ -1,5 +1,7 @@
 package stackUsingArray;
 
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
 
@@ -29,6 +31,10 @@ public class Main {
 		System.out.println(isBalanced);
 		isBalanced = balancedParanthesis.isBalanced("a+b)*[a*c]}");
 		System.out.println(isBalanced);
+		
+		Set<Integer> set = new HashSet<>();
+		System.out.println(set.add(1));
+		System.out.println(set.add(1));;
 	}
 
 }
