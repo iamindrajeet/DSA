@@ -217,4 +217,10 @@ public class AVL {
 	public void delete(int value) {
 		root = deleteNode(root, value);
 	}
+	
+	// delete entire AVL
+	public void deleteEntireAVLTree() {
+		root = null;
+		System.out.println("AVL tree has been deleted successfully!!!");
+	}
 }
