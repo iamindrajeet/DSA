@@ -7,7 +7,7 @@ public class SortLexicographically {
 	public static void main(String[] args) {
 		String[] arr = new String[] {"google", "apple", "eat", "maple", "beat"};
 		//sortLexicographically(arr);
-		//groupRhymingWords(arr);
+		groupRhymingWords(arr);
 //		for (String s : arr) {
 //			System.out.println(s + " ");
 //		}

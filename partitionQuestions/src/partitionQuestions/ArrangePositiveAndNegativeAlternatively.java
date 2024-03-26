@@ -2,34 +2,55 @@ package partitionQuestions;
 
 public class ArrangePositiveAndNegativeAlternatively {
 	public static void main(String[] args) {
-		int[] arr = new int[] {5, 0, 4, 8, -4, -7, -9, -2};
+		int[] arr = new int[] {7, -2, 6, -9, -4, -3, 5};
 		arrange(arr, 0, arr.length - 1);
-		for(int i : arr) {
-			System.out.println(i + " ");
-		}
 	}
 	
 	public static void arrange(int[] arr, int i, int j) {
-		int pIndex = partition(arr, i, j);
-		int n = arr.length / 2;
-		int posIndex = n;
-		int negIndex = 0;
-		while(posIndex < 2 * n && negIndex < n) {
-			swap(arr, negIndex, posIndex);
-			negIndex += 2;
-			posIndex += 2;
-		}
+	    int pIndex = partition(arr, i, j);
+	    System.out.println("After partitioning:");
+	    for (int num : arr) {
+	        System.out.print(num + " ");
+	    }
+	    System.out.println();
+	    
+	    int posIndex = pIndex;
+	    int negIndex = 0;
+	    int[] rearrangedArray = new int[arr.length];
+	    int k = 0;
+	    while(posIndex < arr.length && negIndex < pIndex) {
+	    	rearrangedArray[k++] = arr[posIndex];
+	    	rearrangedArray[k++] = arr[negIndex];
+	    	negIndex++;
+	    	posIndex++;
+	    }
+	    while(posIndex < arr.length) {
+	    	rearrangedArray[k++] = arr[posIndex];
+	    	posIndex++;
+	    }
+	    
+	    while(negIndex < pIndex) {
+	    	rearrangedArray[k++] = arr[negIndex];
+	    	negIndex++;
+	    }
+	    
+	    System.out.println("After rearranging:");
+	    for (int num : rearrangedArray) {
+	        System.out.print(num + " ");
+	    }
+	    System.out.println();
 	}
 
+
 	public static int partition(int[] arr, int low, int high) {
-		int i = low - 1;
+		int i = low;
 		for (int j = low; j <= high; j++) {
 			if (arr[j] < 0) {
-				i++;
 				swap(arr, i, j);
+				i++;
 			}
 		}
-		return i + 1;
+		return i;
 	}
 
 	public static void swap(int[] arr, int i, int j) {

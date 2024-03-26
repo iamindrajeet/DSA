@@ -8,7 +8,7 @@ public class Main {
 		InsertionSort insertionSort = new InsertionSort();
 		MergeSort mergeSort = new MergeSort();
 		QuickSort quickSort = new QuickSort();
-		int[] arr = {10, 5, 30, 15, 50, 6};
+		int[] arr = {-10, 5, 30, 15, -50, 6, 1};
 		bubbleSort.bubbleSort(arr);
 		bubbleSort.printArray(arr);
 		System.out.println();
