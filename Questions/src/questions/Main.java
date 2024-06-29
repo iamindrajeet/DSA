@@ -1,5 +1,11 @@
 package questions;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Arrays;
+import java.util.List;
+
 import questions.recursion.DecimalToBinary;
 import questions.recursion.GCD;
 import questions.recursion.PowerOfNumber;
@@ -28,5 +34,32 @@ public class Main {
 		
 		DecimalToBinary decimalToBinary = new DecimalToBinary();
 		System.out.println(decimalToBinary.decimalToBinary(13));
+		
+		LocalDateTime myObj = LocalDateTime.now();
+	    System.out.println(myObj); 
+	    
+	    // Get the current LocalDateTime
+        LocalDateTime localDateTime = LocalDateTime.now();
+
+        // Specify the source time zone (current system time zone)
+        ZoneId sourceZoneId = ZoneId.systemDefault();
+        
+        System.out.println(sourceZoneId);
+
+        // Specify the target time zone (Eastern Time)
+        ZoneId targetZoneId = ZoneId.of("America/New_York");
+
+        // Convert LocalDateTime to ZonedDateTime in source time zone
+        ZonedDateTime sourceZonedDateTime = localDateTime.atZone(sourceZoneId);
+
+        // Convert ZonedDateTime to Eastern Time
+        ZonedDateTime targetZonedDateTime = sourceZonedDateTime.withZoneSameInstant(targetZoneId);
+
+        // Get the LocalDateTime in Eastern Time
+        LocalDateTime easternLocalDateTime = targetZonedDateTime.toLocalDateTime();
+
+        // Output the converted LocalDateTime
+        System.out.println("LocalDateTime in Eastern Time: " + easternLocalDateTime);
+
 	}
 }

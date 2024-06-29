@@ -11,7 +11,7 @@ import java.util.Map;
 public class SortCharacters {
 	public static void main(String[] args) {
 		// Sample HashMap
-		String str = "aaaaabbbcccc";
+		String str = "dddddaaaaabbbcccc";
 		HashMap<String, Integer> map = new HashMap<>();
 
 		for (int i = 0; i < str.length(); i++) {
@@ -48,7 +48,10 @@ public class SortCharacters {
 				if (compareValue != 0) {
 					return compareValue;
 				} else {
-					return o1.getKey().compareTo(o2.getKey());
+					// Compare the indices of characters in the original string
+                    String key1 = o1.getKey();
+                    String key2 = o2.getKey();
+                    return key1.indexOf(key1.charAt(0)) - key2.indexOf(key2.charAt(0));
 				}
 
 			}
